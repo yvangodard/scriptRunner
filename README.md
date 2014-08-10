@@ -4,13 +4,20 @@ scriptRunner.sh
 Présentation
 ------------
 
-Cet outil est destiné tous les scripts contenus dans un dossier.
+Cet outil est destiné à lancer tous les scripts contenus dans un dossier.
 
 Cette fonction est particulièrement utile pour lancer plusieurs scripts avec un seul LaunchDaemon sous OS X par exemple.
 
 Les scripts à lancer doivent être déposés dans deux répetoires distincts :
 - un répertoire contenant les scripts à n'exécuter qu'une seule fois (une fois lancés ils seront déplacés dans un dossier de sauvegarde et il sera possible de forcer leur lancement avec le paramètre `-f`),
 - un répertoire contenant les scripts à exécuter à chaque lancement de `scriptRunner.sh`.
+
+Le script supporte les options suivantes 
+- `-h` permet d'afficher l'aide.
+- `-o <répertoire des scripts à lancer une fois>` permet de lancer les scripts à n'exécuter qu'une fois. Spécifiez le répertoire contenant les scripts en argument (par exemple : `-o /usr/local/bin/bootScriptsOnce`) ou utilisez `-o default` pour utiliser le répertoire par défaut nommé `runOnce` et situé au même emplacement que `scriptRunner.sh`.
+- `-f` est un paramètre qui doit obligatoirement être utilisé en complément de `-o` et qui permet de forcer le lancement de tous les scripts à ne lancer qu'une fois, y compris ceux qui ont été précédemment lancés.
+- `-e <répertoire des scripts à lancer à chaque fois>` permet de lancer tous les scripts à exécuter périodiquement. Spécifiez le répertoire contenant les scripts en argument (par exemple : `-e /usr/local/bin/bootScriptsEvery`) ou utilisez `-e default` pour utiliser le répertoire par défaut nommé `runEvery` et situé au même emplacement que `scriptRunner.sh`.
+- `-l <fichier journal>` désactive la sortie standard au profit de l'écriture dans un fichier journal. Spécifiez en argument le chemin complet du fichier de log ou utilisez `-l default` pour utiliser le fichier journal standard de `scriptRunner.sh`, à savoir `/var/log/scriptRunner.log`.
 
 Pour une aide complète sur les options supportées, installez le script et lancez l'aide :
 

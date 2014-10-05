@@ -54,7 +54,7 @@ help () {
 	echo -e "\nOptional options:"
 	echo -e "  -l <log file>:              Enables logging instead of standard output."
 	echo -e "                              Specify an argument for the full path to the log file"
-	echo -e "                              (i.e.: '${LOG_FILE}') or use 'default' (${LOG_FILE})"
+	echo -e "                              (e.g.: '${LOG_FILE}') or use 'default' (${LOG_FILE})"
 	echo -e "  -f                          This option forces to run any scripts in the directory"
 	echo -e "                              containing scripts to run only once."
 	echo -e "                              This option must be use with option '-o <directory once>'"
